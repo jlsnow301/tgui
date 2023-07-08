@@ -4,6 +4,15 @@ import legacy from "@vitejs/plugin-legacy";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: `[name].js`,
+        assetFileNames: `[name].[ext]`,
+      },
+    },
+    modulePreload: false,
+  },
   plugins: [
     react(),
     legacy({
