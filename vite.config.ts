@@ -11,13 +11,12 @@ export default defineConfig({
         assetFileNames: `[name].[ext]`,
       },
     },
-    modulePreload: false,
   },
   plugins: [
     react(),
     legacy({
-      targets: ["ie >= 11"],
-      additionalLegacyPolyfills: ["regenerator-runtime/runtime"],
+      targets: ["ie 11"],
+      renderModernChunks: false,
     }),
   ],
 });

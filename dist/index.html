@@ -4,13 +4,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-    <script type="module" crossorigin src="/index.js"></script>
-    <link rel="stylesheet" href="/index.css" />
+    <!-- polyfill -->
   </head>
   <body>
     <div id="root"></div>
-    <!-- inline polyfill -->
-    <!-- legacy index -->
+    <script crossorigin id="vite-legacy-entry" data-src="/index-legacy.js">
+      System.import(
+        document.getElementById("vite-legacy-entry").getAttribute("data-src")
+      );
+    </script>
   </body>
 </html>
