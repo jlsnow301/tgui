@@ -11,6 +11,7 @@ export default defineConfig({
         assetFileNames: `[name].[ext]`,
       },
     },
+    modulePreload: false,
   },
   plugins: [
     react(),
